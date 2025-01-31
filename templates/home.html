@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Crop Doctor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-container">
+        <div id="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Crop Doctor Logo">
+        </div>
+        <div class="title">CROP DOCTOR</div>
+        <div class="user-actions">
+            <div class="dropdown">
+                <button class="dropdown-toggle">
+                    <img src="{{ url_for('static', filename='images/profile-icon.png') }}" alt="Profile"
+                        class="profile-icon">
+                    <span>{{ username }}</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('profile') }}">Your Profile</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar-container">
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="/upload">Upload Image</a></li>
+            <li><a href="/chatbot">Chatbot</a></li>
+            <li class="language-dropdown">
+                <button class="dropbtn">Languages</button>
+                <div class="language-dropdown-content">
+                    <a href="/lang/english">English</a>
+                    <a href="/lang/hindi">Hindi</a>
+                    <a href="/lang/tamil">Tamil</a>
+                </div>
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+
+        </ul>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner-container">
+        <div class="banner-content">
+            <h1>A New Way</h1>
+            <h1>AI-Powered Farmers Doctor</h1>
+            <span>Revolutionize your farming experience with the AI-Powered farming Doctor.<br>Unleash the future on
+                agriculture with intelligent technology.</span>
+            <a href="/upload"><button>Get Started</button></a>
+        </div>
+    </section>
+
+
+    <!-- Weather Forecast Section -->
+    <section class="weather-container">
+        <div class="wrapper">
+            <div class="img_section">
+                <div class="default_info">
+                    <h2 class="default_day">Sunday</h2>
+                    <span class="default_date">18 September 2023</span>
+                    <div class="icons">
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="" />
+                        <h2 class="weather_temp">22°C</h2>
+                        <h3 class="cloudtxt">Overcast Clouds</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="content_section">
+                <form>
+                    <input type="text" placeholder="Search Location" class="input_field" />
+                    <button type="submit" class="btn_search">Search</button>
+                </form>
+
+                <div class="day_info">
+                    <div class="content">
+                        <p class="title">NAME</p>
+                        <span class="value">Chennai</span>
+                    </div>
+                    <div class="content">
+                        <p class="title">TEMP</p>
+                        <span class="value">35°C</span>
+                    </div>
+                    <div class="content">
+                        <p class="title">HUMIDITY</p>
+                        <span class="value">2%</span>
+                    </div>
+                    <div class="content">
+                        <p class="title">WIND SPEED</p>
+                        <span class="value">2.92 Km/h</span>
+                    </div>
+                </div>
+
+                <div class="list_content">
+                    <ul>
+                        <li>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                            <span>Sat</span>
+                            <span class="day_temp">33°C</span>
+                        </li>
+                        <li>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                            <span>Sat</span>
+                            <span class="day_temp">36°C</span>
+                        </li>
+                        <li>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                            <span>Sat</span>
+                            <span class="day_temp">39°C</span>
+                        </li>
+                        <li>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                            <span>Sat</span>
+                            <span class="day_temp">33°C</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

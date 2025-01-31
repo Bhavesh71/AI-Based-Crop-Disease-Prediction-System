@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header class="header-container">
+        <div id="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="title">CROP DOCTOR</div>
+        <div class="user-actions">
+            <div class="dropdown">
+                <button class="dropdown-toggle">
+                    <img src="{{ url_for('static', filename='images/profile-icon.png') }}" alt="Profile"
+                        class="profile-icon">
+                    <span>{{ username }}</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('profile') }}">Your Profile</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar-container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/upload">Upload Image</a></li>
+            <li><a href="/chatbot">Chatbot</a></li>
+            <li class="language-dropdown">
+                <button class="dropbtn">Languages</button>
+                <div class="language-dropdown-content">
+                    <a href="/lang/english">English</a>
+                    <a href="/lang/hindi">Hindi</a>
+                    <a href="/lang/tamil">Tamil</a>
+                </div>
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="uploadbody">
+        <section class="upload-box">
+            <h2>Upload Crop Image for Disease Detection</h2>
+            <div id="imagePreview" class="image-section" style="display: none;"></div>
+            <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="upload-area" id="upload-area">
+                    <p>Drag and drop your image here</p>
+                    <div class="tooltip">Accepted file types: .jpg, .png, .jpeg</div>
+                    <input type="file" name="file" id="file-input" accept="image/*" required>
+                </div>
+                <div class="progress-container" id="progress-container" style="display: none;">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <p id="file-error" style="color: red; display: none;">Please upload a valid image file.</p>
+                <button type="submit" id="btn-upload">Upload</button>
+                <button type="button" id="btn-predict" disabled>Predict</button>
+            </form>
+            <div class="loader" style="display: none;"></div>
+            <div id="result" style="display: none;"></div>
+        </section>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/uploadscript.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toggleprofile.js') }}"></script>
+</body>
+
+</html>

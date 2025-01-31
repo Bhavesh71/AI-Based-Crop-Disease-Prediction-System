@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-container">
+        <div id="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="title">CROP DOCTOR</div>
+        <div class="user-actions">
+            <div class="dropdown">
+                <button class="dropdown-toggle">
+                    <img src="{{ url_for('static', filename='images/profile-icon.png') }}" alt="Profile"
+                        class="profile-icon">
+                    <span>{{ username }}</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('profile') }}">Your Profile</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar-container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/upload">Upload Image</a></li>
+            <li><a href="/chatbot">Chatbot</a></li>
+            <li class="language-dropdown">
+                <button class="dropbtn">Languages</button>
+                <div class="language-dropdown-content">
+                    <a href="/lang/english">English</a>
+                    <a href="/lang/hindi">Hindi</a>
+                    <a href="/lang/tamil">Tamil</a>
+                </div>
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a class="active" href="/contact">Contact</a></li>
+
+
+        </ul>
+    </nav>
+
+    <section class="contactbody">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Feel free to reach out to us through the form below or using the contact details provided.</p>
+                <ul class="contact-details">
+                    <li><strong>Email:</strong> support@cropdoctor.com</li>
+                    <li><strong>Phone:</strong> +1234567890</li>
+                    <li><strong>Address:</strong> Vellore Institute of Technology, Vandalur-Kelambakkam Road, Chennai
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Query</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/contactscript.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toggleprofile.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Assistance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-container">
+        <div id="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="title">CROP DOCTOR</div>
+        <div class="user-actions">
+            <div class="dropdown">
+                <button class="dropdown-toggle">
+                    <img src="{{ url_for('static', filename='images/profile-icon.png') }}" alt="Profile"
+                        class="profile-icon">
+                    <span>{{ username }}</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('profile') }}">Your Profile</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar-container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/upload">Upload Image</a></li>
+            <li><a class="active" href="/chatbot">Chatbot</a></li>
+            <li class="language-dropdown">
+                <button class="dropbtn">Languages</button>
+                <div class="language-dropdown-content">
+                    <a href="/lang/english">English</a>
+                    <a href="/lang/hindi">Hindi</a>
+                    <a href="/lang/tamil">Tamil</a>
+                </div>
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+        </ul>
+    </nav>
+    <section class="page-container">
+        <h2>Chat with Our AI Bot</h2>
+        <div class="chatbot-interface">
+            <input type="text" id="userInput" placeholder="Ask me anything...">
+            <button id="sendButton">Send</button>
+        </div>
+    </section>
+
+
+
+    <script src="chatbot.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toggleprofile.js') }}"></script>
+</body>
+
+</html>
