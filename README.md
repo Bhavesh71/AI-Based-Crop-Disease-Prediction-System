@@ -50,8 +50,6 @@ The **Crop Disease Prediction System** is an AI-powered web application that hel
    ```
 5. **Access the web app:** Open `http://127.0.0.1:5000/` in your browser.
 
-## 📸 Screenshots
-(Add screenshots of the UI here)
 
 ## 🛠️ Future Enhancements
 - Expand the dataset for improved model accuracy.
